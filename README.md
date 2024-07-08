@@ -23,4 +23,11 @@ Subdomain Enumeration <br>
 *httpx -l subdomains.txt >>live_subdomains.txt <br>
 *https://subdomainfinder.c99.nl/ <br>
 
+Vulnerability Scanning using Nuclei <br>
+
+nuclei -l live_subdomains.txt -o nuclei_reslut.txt <br>
+nuclei -l live_subdomains.txt -rl 3 -c 2 -o nuclei_reslut.txt <br>
+subfinder -d target.com -all | httpx | nuclei -t ~/nuclei-templates <br>
+https://blog.projectdiscovery.io/ultimate-nuclei-guide <br>
+
 
