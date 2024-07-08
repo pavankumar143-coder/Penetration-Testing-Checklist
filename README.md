@@ -91,6 +91,17 @@ Server Side Template Injection on Name parameter during Sign Up process <br>
 &nbsp;&nbsp;&nbsp;6)Notice that the email arrives with the Subject as 49. <br>
 &nbsp;&nbsp;&nbsp;7)Try all input fields. <br>
 
+Reflected XSS on Signup Page and Login page <br>
+
+&nbsp;&nbsp;&nbsp;1)Go to https://example.com/signup <br>
+&nbsp;&nbsp;&nbsp;2)Just fill up the signup form and don't submit. <br>
+&nbsp;&nbsp;&nbsp;3)Open burp suite captures the submit request. <br>
+&nbsp;&nbsp;&nbsp;4)Change the value of email parameter from a valid email address to <img src=xonerror=alert(document.domain)> <br>
+&nbsp;&nbsp;&nbsp;5)Forward the request and turn the intercept off. <br>
+&nbsp;&nbsp;&nbsp;6)Go to browser check. <br>
+&nbsp;&nbsp;&nbsp;7)Payload for Username field : <svg/onload=confirm(1)> <br>
+&nbsp;&nbsp;&nbsp;8)Payload for Email field : a7madn1@gmail.com'"><svg/onload=alert(/xss/)>, “><svg/onload=confirm(1)>”@x.y <br>
+
 
 
 
