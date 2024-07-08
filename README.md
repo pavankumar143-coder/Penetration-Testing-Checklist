@@ -53,14 +53,14 @@ Broken Link Hijacking <br>
 Mail Server Misconfiguration <br>
 
 &nbsp;&nbsp;&nbsp;a)Now Email Spoofing happens due to two main reasons : <br>
-&nbsp;&nbsp;&nbsp;&nbsp;1)SPF record not set for the particular email <br>
-&nbsp;&nbsp;&nbsp;&nbsp;2)Missing of DMARC protocol for the particular email <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)SPF record not set for the particular email <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)Missing of DMARC protocol for the particular email <br>
 &nbsp;&nbsp;&nbsp;b)Go to your target company and collect all the possible emails of that company <br>
 &nbsp;&nbsp;&nbsp;c)Now check the SPF and DMARC record of all the emails : https://mxtoolbox.com/ <br>
 &nbsp;&nbsp;&nbsp;d)Now if you get an email (xyz@company.com), then go for its exploitation <br>
 &nbsp;&nbsp;&nbsp;e)Visit https://emkei.cz/ in order to exploit the issue <br>
 &nbsp;&nbsp;&nbsp;f)Here you’ll need to fill From-email, To and Subject <br>
-&nbsp;&nbsp;&nbsp;g)In From-email add the company’s email and in To add your own email and in Subject you can add anything (like Hacking You, Bounty Time etc.) <br>
+&nbsp;&nbsp;&nbsp;g)In From-email add the company’s email and in To add your own email and in Subject <br> &nbsp;&nbsp;&nbsp;you can add anything (like Hacking You, Bounty Time etc.) <br>
 &nbsp;&nbsp;&nbsp;h)Check your inbox and you’ll get the email from that company which was sent by you <br>
 
 SIGNUP PAGE VULNERABILITIES <br>
@@ -72,6 +72,8 @@ No Rate Limit at Signup Page <br>
 &nbsp;&nbsp;&nbsp;3)add $$ to email parameter <br>
 &nbsp;&nbsp;&nbsp;4)In the payload add different email address <br>
 &nbsp;&nbsp;&nbsp;5)Fire up intruder and check whether it return 200 ok <br>
+
+
 Hyper Link Injection Vulnerability <br>
 
 &nbsp;&nbsp;&nbsp;1)Go to https://target.com/ and create account with the first name http://attacker.com/ and last name. <br>
