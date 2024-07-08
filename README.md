@@ -15,4 +15,12 @@ A Penetration Testing Checklist for web ensures comprehensive security by system
 *Visit robots.txt in the targeted website. <br>
 *Visit sitemap.xml in the targeted website. <br>
 
+2. Configuration and Deployment Management Testing <br>
+
+Subdomain Enumeration <br>
+
+subfinder -d example.com -o subdomains.txt -all -vv <br>
+httpx -l subdomains.txt >>live_subdomains.txt <br>
+https://subdomainfinder.c99.nl/ <br>
+
 
