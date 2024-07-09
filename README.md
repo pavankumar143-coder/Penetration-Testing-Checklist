@@ -20,11 +20,8 @@
 
 
 **Subdomain Enumeration**
-* subfinder -d example.com >>subdomains.txt
-* assetfinder -subs-only example.com >>subdomains.txt
-* findomain -t exapmle.com >>subdomains.txt
-* python3 sublist3r.py -d example.com -o subdomains.txt
-* httpx -l subdomains.txt >>live_subdomains.txt
+* subfinder -d example.com -o subdomains.txt -vv -all
+* cat subdomains.txt | httpx-toolkit > live_subdomains.txt
 * https://subdomainfinder.c99.nl/
 
 **Vulnerability Scanning using Nuclei**
@@ -46,8 +43,6 @@
 **Origin ip Disclosure**
 * https://www.shodan.io/
 * https://search.censys.io
-* https://securitytrails.com
-* https://en.fofa.info/
 * https://medium.com/@pruthu.raut/hunting-for-origin-ip-a-beginners-guide-70235f3dd415
 
 **Broken Link Hijacking**
