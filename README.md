@@ -3,16 +3,9 @@
 **Information Gathering**
 * https://dorks.faisalahmed.me/#
 * https://taksec.github.io/google-dorks-bug-bounty/
-* https://mr-koanti.github.io/github
 * https://mr-koanti.github.io/shodan
 * https://www.lopseg.com.br/osint
 * https://web.archive.org/web/*/shippit.com*
-
-**Technology and Framework Fingerprinting**
-* https://builtwith.com/
-* https://whatcms.org/
-* https://sitereport.netcraft.com/
-* https://github.com/urbanadventurer/WhatWeb
 
 **Fingerprint Web Server**
 * Wappalyzer Extension
