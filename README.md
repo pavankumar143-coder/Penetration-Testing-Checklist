@@ -6,14 +6,7 @@
 * https://mr-koanti.github.io/shodan
 * https://www.lopseg.com.br/osint
 * https://web.archive.org/web/*/shippit.com*
-
-**Fingerprint Web Server**
-* Wappalyzer Extension
-* Netcraft Website
-* Banner Grabbing using burpsuite
-* Web Server Error Message
-* Use Automated tools like NMAP, NIKTO
-* curl -I -L https://demo.testfire.net/ 
+ 
 
 **Review Webserver Metafiles for Information Leakage**
 * Visit robots.txt in the targeted website.
